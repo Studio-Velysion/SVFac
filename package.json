@@ -1,0 +1,119 @@
+{
+  "name": "svfac",
+  "description": "SVFac — Studio Velysion Facture",
+  "author": {
+    "name": "Studio Velysion CreatorHub"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Studio-Velysion/SVFac.git"
+  },
+  "private": true,
+  "version": "1.0.10",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "node scripts/start-dev.cjs",
+    "test": "node scripts/start-dev.cjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dist": "node scripts/bump-version.cjs && vite build && node node_modules/electron-builder/cli.js",
+    "build:icon": "node scripts/build-icon.cjs",
+    "build:logo": "node scripts/svg-to-icon.cjs && npm run build:icon",
+    "pack": "node node_modules/electron-builder/cli.js",
+    "rebuild": "npx electron-rebuild -f -w better-sqlite3",
+    "backup": "powershell -ExecutionPolicy Bypass -File scripts/backup.ps1"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.6.0",
+    "date-fns": "^3.6.0",
+    "jszip": "^3.10.1",
+    "grapesjs": "^0.20.4",
+    "grapesjs-blocks-basic": "^1.0.2",
+    "jsbarcode": "^3.11.6",
+    "lucide-react": "^0.344.0",
+    "react": "^18.2.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.1",
+    "react-router-dom": "^6.22.0",
+    "react-toastify": "^10.0.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^8.2.2",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "electron-rebuild": "^3.2.9",
+    "png-to-ico": "^3.0.1",
+    "postcss": "^8.4.0",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.1.0",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.studio-velysion.svfac",
+    "productName": "SVFac",
+    "copyright": "Copyright © Studio Velysion CreatorHub. Tous droits réservés.",
+    "directories": {
+      "output": "installateur",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist",
+      "electron/main.cjs",
+      "electron/preload.cjs",
+      "electron/database.cjs",
+      "electron/ipc-tasks.cjs",
+      "icon.png",
+      "icon.ico"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.ico",
+      "publisherName": "Studio Velysion CreatorHub"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "installerLanguages": [
+        "fr-FR",
+        "en-US"
+      ],
+      "language": "1036",
+      "shortcutName": "SVFac",
+      "menuCategory": "Studio Velysion CreatorHub",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "license": "build/license.txt",
+      "uninstallDisplayName": "SVFac — Studio Velysion Facture"
+    },
+    "asarUnpack": [
+      "**/node_modules/better-sqlite3/**"
+    ]
+  }
+}

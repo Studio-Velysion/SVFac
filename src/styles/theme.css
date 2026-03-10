@@ -1,0 +1,40 @@
+/**
+ * Palette Studio Velysion CreatorHub — Devis & Factures
+ */
+
+:root,
+[data-theme="dark"] {
+  --color-primary: #7C3AED;
+  --color-secondary: #A855F7;
+  --color-accent: #4C1D95;
+  --color-bg-main: #0B0F1A;
+  --color-bg-secondary: #111827;
+  --color-bg-dark: #070B14;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9CA3AF;
+  --color-ui-dark: #1F2937;
+  --color-ui-medium: #374151;
+  --color-border: var(--color-accent);
+  --color-separator: var(--color-ui-medium);
+  --color-card-bg: var(--color-bg-secondary);
+  --color-card-border: var(--color-accent);
+  --color-button-primary: var(--color-primary);
+  --color-button-primary-hover: var(--color-secondary);
+  --color-link: var(--color-primary);
+  --color-link-hover: var(--color-secondary);
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+}
+
+[data-theme="light"] {
+  --color-bg-main: #f3f4f6;
+  --color-bg-secondary: #ffffff;
+  --color-bg-dark: #e5e7eb;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-ui-dark: #e5e7eb;
+  --color-ui-medium: #d1d5db;
+  --color-separator: #d1d5db;
+  --color-card-bg: #ffffff;
+  --color-card-border: #d1d5db;
+}

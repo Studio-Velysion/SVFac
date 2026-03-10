@@ -1,0 +1,156 @@
+.page {
+  max-width: 720px;
+}
+
+.intro {
+  color: var(--color-text-secondary);
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.alert {
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-dark);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.toolbar {
+  margin-bottom: 1rem;
+}
+
+.clientGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.clientCard {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.clientCardName {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.clientCardSub {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.clientCard .btn {
+  margin-top: 0.25rem;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-secondary);
+  padding: 2rem;
+}
+
+.card {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-separator);
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.select {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-separator);
+  border-radius: 8px;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 1.5rem;
+}
+
+.blockTitle {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.folderRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.folderRow .input {
+  flex: 1;
+}
+
+.notesSection {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-separator);
+}
+
+.notesSubtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.noteList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.noteItem,
+.noteEmpty {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-separator);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.noteEmpty {
+  color: var(--color-text-secondary);
+}
+
+.newNote {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.newNote .label {
+  margin-top: 0.5rem;
+}

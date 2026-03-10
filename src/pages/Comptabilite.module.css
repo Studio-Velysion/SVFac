@@ -1,0 +1,436 @@
+/* Module Comptabilité — interface propre et moderne (couleurs SVFac) */
+
+.page {
+  padding: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Barre d’outils : filtre période + actions */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+}
+
+.toolbarGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolbarLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.toolbarSelect {
+  min-width: 100px;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-ui-medium);
+  border-radius: 8px;
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+}
+
+.toolbarActions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btnRapprochement {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: rgba(168, 85, 247, 0.2);
+  color: var(--color-secondary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btnRapprochement:hover {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.btnPaiement {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.btnPaiement:hover {
+  background: var(--color-secondary);
+}
+
+/* Indication courte */
+.hint {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Onglets */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1.75rem;
+  padding: 5px;
+  background: var(--color-bg-dark);
+  border-radius: 12px;
+  border: 1px solid var(--color-card-border);
+  width: fit-content;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab:hover {
+  color: var(--color-text-primary);
+  background: var(--color-ui-dark);
+}
+
+.tabActive {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.tabActive:hover {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+/* Cartes KPI */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cardCompta {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cardCompta:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.12);
+}
+
+.cardComptaIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.cardComptaLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.cardComptaValue {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cardComptaSub {
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+/* Bloc contenu (écritures, grand livre, etc.) */
+.contentCard {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-separator);
+  background: var(--color-bg-dark);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.sectionActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Tableau écritures */
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table th {
+  text-align: left;
+  padding: 0.85rem 1.25rem;
+  background: var(--color-bg-dark);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.table td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--color-separator);
+  color: var(--color-text-primary);
+}
+
+.table tbody tr {
+  transition: background 0.15s;
+}
+
+.table tbody tr:hover {
+  background: var(--color-ui-dark);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table .amountPositive {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-success);
+}
+
+.table .amountNegative {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-danger);
+}
+
+.table .cellActions {
+  display: flex;
+  gap: 2px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Grand livre */
+.ledgerSection {
+  margin-bottom: 2rem;
+}
+
+.ledgerAccount {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.ledgerAccountHeader {
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(168, 85, 247, 0.08));
+  border-bottom: 1px solid var(--color-separator);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary);
+}
+
+.ledgerTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.ledgerTable th {
+  text-align: left;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-bg-dark);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.ledgerTable td {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--color-separator);
+  color: var(--color-text-primary);
+}
+
+.ledgerTable tbody tr:hover {
+  background: var(--color-ui-dark);
+}
+
+.ledgerTable .debit {
+  text-align: right;
+  font-weight: 500;
+  color: var(--color-danger);
+}
+
+.ledgerTable .credit {
+  text-align: right;
+  font-weight: 500;
+  color: var(--color-success);
+}
+
+.ledgerTable .totalRow td {
+  font-weight: 700;
+  padding: 0.85rem 1.25rem;
+  border-top: 2px solid var(--color-separator);
+  background: var(--color-bg-dark);
+}
+
+/* Compte de résultat */
+.reportCard {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  max-width: 560px;
+}
+
+.reportCardTitle {
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.reportCardTitle.income {
+  background: rgba(16, 185, 129, 0.08);
+  border-left: 4px solid var(--color-success);
+}
+
+.reportCardTitle.expense {
+  background: rgba(239, 68, 68, 0.08);
+  border-left: 4px solid var(--color-danger);
+}
+
+.reportRows {
+  padding: 0.5rem 0;
+}
+
+.reportRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1.25rem;
+  color: var(--color-text-primary);
+  transition: background 0.15s;
+}
+
+.reportRow:hover {
+  background: var(--color-ui-dark);
+}
+
+.reportRowTotal {
+  font-weight: 700;
+  padding: 0.9rem 1.25rem;
+  border-top: 2px solid var(--color-separator);
+  background: var(--color-bg-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reportResult {
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.reportResult.positive {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--color-success);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.reportResult.negative {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--color-danger);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}

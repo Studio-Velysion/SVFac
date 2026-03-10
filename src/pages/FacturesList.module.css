@@ -1,0 +1,33 @@
+.page {
+  max-width: 1000px;
+}
+
+.toolbar {
+  margin-bottom: 1rem;
+}
+
+.ref {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.ref:hover {
+  color: var(--color-secondary);
+}
+
+.rowPaid {
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.rowUnpaid {
+  background: rgba(239, 68, 68, 0.04);
+}
+
+.actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.actions .btn {
+  padding: 0.5rem;
+}

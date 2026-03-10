@@ -1,0 +1,240 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.modal {
+  background: var(--color-bg-main);
+  border-radius: 12px;
+  border: 1px solid var(--color-card-border);
+  max-width: 800px;
+  width: 100%;
+  max-height: 95vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.printArea {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.doc {
+  background: #fff;
+  color: #111;
+  padding: 2rem;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.templateRoot {
+  font-size: 14px;
+  color: #111;
+}
+
+.templateRoot table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.templateRoot th,
+.templateRoot td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.templateRoot th {
+  background: #f5f5f5;
+}
+
+.docTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.docCompanyColumn {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.docRightColumn {
+  flex: 1 1 50%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logo {
+  max-height: 56px;
+  margin-bottom: 0.5rem;
+}
+
+.companyName {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  color: #111;
+}
+
+.companyInfo {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.docTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.clientBlock {
+  padding: 1rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.notesBlock {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #fef3c7;
+  border-radius: 8px;
+  font-size: 0.875rem;
+}
+
+.notesBlock p {
+  margin: 0.25rem 0 0;
+  white-space: pre-wrap;
+}
+
+.clientBlock p {
+  margin: 0.2rem 0;
+}
+
+.docDate {
+  margin-bottom: 1rem;
+  color: #6b7280;
+}
+
+.linesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.linesTable th,
+.linesTable td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.linesTable th {
+  background: #f9fafb;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.emptyTableHint {
+  text-align: center;
+  color: #9ca3af;
+  font-style: italic;
+  padding: 1rem !important;
+}
+
+.totalsBlock {
+  margin-left: auto;
+  width: 280px;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.totalLine {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+}
+
+.totalTTC {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+  color: var(--color-primary);
+}
+
+.tvaMention {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.amountLetters {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.modePaiement {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.modePaiementPlaceholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.docFooter {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+@media print {
+  .overlay {
+    background: #fff;
+    padding: 0;
+  }
+  .modal {
+    border: none;
+    max-height: none;
+  }
+  .toolbar {
+    display: none !important;
+  }
+  .printArea {
+    padding: 0;
+  }
+  .doc {
+    box-shadow: none;
+  }
+}

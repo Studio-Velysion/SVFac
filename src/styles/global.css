@@ -1,0 +1,521 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--color-bg-main);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Utilitaires */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-button-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-button-primary-hover);
+}
+
+.btn-secondary {
+  background: var(--color-ui-dark);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-ui-medium);
+}
+
+.btn-secondary:hover {
+  background: var(--color-ui-medium);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn-ghost:hover {
+  background: var(--color-ui-dark);
+  color: var(--color-text-primary);
+}
+
+.input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-ui-medium);
+  border-radius: 8px;
+  color: var(--color-text-primary);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.25);
+}
+
+.input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.375rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--color-card-border);
+  background: var(--color-card-bg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-bg-dark);
+  border-bottom: 1px solid var(--color-separator);
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--color-success);
+}
+
+.badge-danger {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--color-danger);
+}
+
+.badge-warning {
+  background: rgba(168, 85, 247, 0.25);
+  color: var(--color-secondary);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: var(--color-text-secondary);
+}
+
+.empty-state p {
+  margin: 0.5rem 0 1rem;
+}
+
+/* Modal email */
+.email-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.email-modal {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto;
+}
+.email-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-separator);
+}
+.email-modal-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.email-modal-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.email-modal-hint {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+.email-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--color-separator);
+}
+
+/* Section Tâches : mêmes couleurs que le reste du logiciel (violet primary, pas bleu) */
+.tasks-section {
+  background: var(--color-bg-main);
+  color: var(--color-text-primary);
+  min-height: 100%;
+}
+.tasks-section .bg-dark-surface,
+.tasks-section [class*="bg-dark-surface"] {
+  background: var(--color-card-bg) !important;
+}
+.tasks-section .border-dark-border,
+.tasks-section [class*="border-dark-border"] {
+  border-color: var(--color-card-border) !important;
+}
+.tasks-section .text-dark-text,
+.tasks-section [class*="text-dark-text"]:not([class*="text-dark-textSecondary"]) {
+  color: var(--color-text-primary) !important;
+}
+.tasks-section .text-dark-textSecondary,
+.tasks-section [class*="text-dark-textSecondary"] {
+  color: var(--color-text-secondary) !important;
+}
+.tasks-section .bg-dark-surfaceHover,
+.tasks-section [class*="bg-dark-surfaceHover"] {
+  background: var(--color-ui-dark) !important;
+}
+.tasks-section .bg-dark-bg {
+  background: var(--color-bg-dark) !important;
+}
+
+/* Boutons et accents bleu → violet (couleur du logiciel) */
+.tasks-section .bg-blue-600,
+.tasks-section button.bg-blue-600,
+.tasks-section a.bg-blue-600 {
+  background: var(--color-button-primary) !important;
+}
+.tasks-section .hover\:bg-blue-700:hover,
+.tasks-section .hover\:bg-blue-700:focus,
+.tasks-section button.bg-blue-600:hover,
+.tasks-section a.bg-blue-600:hover {
+  background: var(--color-button-primary-hover) !important;
+}
+.tasks-section .text-blue-400 {
+  color: var(--color-primary) !important;
+}
+.tasks-section .hover\:text-blue-300:hover {
+  color: var(--color-secondary) !important;
+}
+.tasks-section .border-blue-400,
+.tasks-section .border-blue-500 {
+  border-color: var(--color-primary) !important;
+}
+.tasks-section .hover\:border-blue-500\/50:hover,
+.tasks-section [class*="hover:border-blue"]:hover {
+  border-color: var(--color-primary) !important;
+}
+.tasks-section .focus\:ring-blue-500:focus,
+.tasks-section [class*="focus:ring-blue"]:focus {
+  --tw-ring-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+.tasks-section .bg-blue-500\/20,
+.tasks-section .bg-blue-500\/10 {
+  background: rgba(124, 58, 237, 0.2) !important;
+}
+.tasks-section .text-blue-400 {
+  color: var(--color-primary) !important;
+}
+.tasks-section .from-blue-500,
+.tasks-section .to-blue-600 {
+  --tw-gradient-from: var(--color-primary);
+  --tw-gradient-to: var(--color-secondary);
+}
+.tasks-section [class*="from-blue-500"][class*="to-blue-600"],
+.tasks-section .bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary)) !important;
+}
+.tasks-section input:focus.focus\:ring-blue-500,
+.tasks-section textarea:focus.focus\:ring-blue-500,
+.tasks-section select:focus.focus\:ring-blue-500 {
+  --tw-ring-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+.tasks-section .text-blue-600 {
+  color: var(--color-primary) !important;
+}
+.tasks-section .focus\:ring-blue-500 {
+  --tw-ring-color: var(--color-primary);
+}
+.tasks-section input[class*="focus:ring-blue"],
+.tasks-section textarea[class*="focus:ring-blue"] {
+  --tw-ring-color: var(--color-primary);
+}
+.tasks-section .bg-blue-500\/20.text-blue-400 {
+  background: rgba(124, 58, 237, 0.2) !important;
+  color: var(--color-primary) !important;
+}
+
+/* Toasts (notifications) : style unifié avec le logiciel */
+.Toastify__toast.toast-app {
+  background: var(--color-card-bg) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-card-border) !important;
+  border-radius: 12px !important;
+}
+.Toastify__toast--error.toast-app {
+  border-left: 4px solid var(--color-danger);
+}
+.Toastify__toast--success.toast-app {
+  border-left: 4px solid var(--color-success);
+}
+.Toastify__progress-bar {
+  background: var(--color-primary) !important;
+}
+.Toastify__close-button {
+  color: var(--color-text-secondary) !important;
+}
+
+/* Kanban : colonnes propres */
+.kanban-board {
+  display: flex;
+  gap: 1rem;
+  min-height: 420px;
+  height: calc(100vh - 380px);
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.kanban-column {
+  flex: 0 0 280px;
+  min-width: 280px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.kanban-column.is-over {
+  border-color: var(--color-primary);
+  background: rgba(124, 58, 237, 0.06);
+}
+.kanban-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-separator);
+  background: var(--color-bg-dark);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+.kanban-column-header .kanban-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.4rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--color-ui-medium);
+  color: var(--color-text-secondary);
+}
+.kanban-column-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.kanban-card {
+  padding: 0.875rem 1rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-separator);
+  border-radius: 10px;
+  cursor: move;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.kanban-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px rgba(124, 58, 237, 0.2);
+}
+.kanban-card.is-dragging {
+  opacity: 0.6;
+}
+.kanban-card-title {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-text-primary);
+  margin: 0 0 0.25rem 0;
+  line-height: 1.3;
+}
+.kanban-card-desc {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 0.5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.kanban-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+.kanban-card-actions {
+  display: flex;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-separator);
+}
+.kanban-card-actions button {
+  padding: 0.25rem;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+.kanban-card-actions button:hover {
+  background: var(--color-ui-dark);
+  color: var(--color-text-primary);
+}
+.kanban-card-actions button[title="Supprimer"]:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--color-danger);
+}
+.kanban-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.kanban-badge-priority-high { background: rgba(239, 68, 68, 0.2); color: var(--color-danger); }
+.kanban-badge-priority-normal { background: rgba(124, 58, 237, 0.2); color: var(--color-secondary); }
+.kanban-badge-priority-low { background: rgba(156, 163, 175, 0.25); color: var(--color-text-secondary); }
+.kanban-column-todo .kanban-column-header { border-left: 3px solid var(--color-ui-medium); }
+.kanban-column-in_progress .kanban-column-header { border-left: 3px solid var(--color-primary); }
+.kanban-column-pending .kanban-column-header { border-left: 3px solid #eab308; }
+.kanban-column-done .kanban-column-header { border-left: 3px solid var(--color-success); }

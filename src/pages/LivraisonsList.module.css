@@ -1,0 +1,25 @@
+.page {
+  max-width: 1000px;
+}
+
+.toolbar {
+  margin-bottom: 1rem;
+}
+
+.ref {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.ref:hover {
+  color: var(--color-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.actions .btn {
+  padding: 0.5rem;
+}

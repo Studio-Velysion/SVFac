@@ -1,0 +1,100 @@
+.editor {
+  margin-top: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.productSearch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 240px;
+}
+
+.productSearch .input {
+  flex: 1;
+}
+
+.productDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-card-border);
+  border-radius: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.productItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.productItem:hover {
+  background: var(--color-ui-dark);
+}
+
+.productPrice {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.linesTable .input-sm {
+  padding: 0.5rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.total {
+  font-weight: 600;
+}
+
+.totals {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-dark);
+  border: 1px solid var(--color-separator);
+  border-radius: 10px;
+  max-width: 320px;
+  margin-left: auto;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+}
+.totalRow .label {
+  margin-bottom: 0;
+}
+
+.totalTTC {
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-separator);
+  font-size: 1.1rem;
+}
+
+.totalTTC strong {
+  color: var(--color-primary);
+}

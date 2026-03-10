@@ -1,0 +1,48 @@
+.page {
+  max-width: 1000px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.search {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+  max-width: 360px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.search .input {
+  padding-left: 2.5rem;
+}
+
+.ref {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.name {
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.actions .btn {
+  padding: 0.5rem;
+}

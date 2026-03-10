@@ -1,0 +1,181 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--color-bg-dark);
+  border-right: 1px solid var(--color-card-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-separator);
+  background: transparent;
+}
+
+.brandIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.brandLogoWrap {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Logo transparent, parties blanches teintées en violet (sans fond blanc) */
+.brandLogo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: transparent;
+  filter: sepia(1) hue-rotate(250deg) saturate(2.5) brightness(1.1);
+}
+
+.brandText {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text-primary);
+  flex: 1;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-ui-dark);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.themeToggle:hover {
+  background: rgba(124, 58, 237, 0.3);
+  color: var(--color-primary);
+}
+
+.nav {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.navLink:hover {
+  background: var(--color-ui-dark);
+  color: var(--color-text-primary);
+}
+
+.navLinkActive {
+  background: rgba(124, 58, 237, 0.2);
+  color: var(--color-primary);
+}
+
+.navLinkActive:hover {
+  background: rgba(124, 58, 237, 0.3);
+  color: var(--color-secondary);
+}
+
+.main {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-main);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.aideButtons {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+
+.aideBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.aideBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 72px;
+  }
+
+  .brandText,
+  .navLink span {
+    display: none;
+  }
+
+  .brand {
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .navLink {
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+}

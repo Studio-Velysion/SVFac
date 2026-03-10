@@ -1,0 +1,64 @@
+**Licence d'utilisation du logiciel SVFac**
+*Studio Velysion Facture*
+
+**Éditeur / Créateur :** Studio Velysion CreatorHub
+**© Studio Velysion CreatorHub – Tous droits réservés**
+
+---
+
+### 1. Présentation du logiciel
+
+SVFac (Studio Velysion Facture) est un logiciel de gestion commerciale permettant de créer et gérer des devis, factures, clients, produits et autres éléments liés à l'activité professionnelle.
+
+---
+
+### 2. Conditions d'utilisation
+
+En installant et en utilisant ce logiciel, l'utilisateur accepte les présentes conditions d'utilisation.
+
+Le logiciel SVFac doit être utilisé uniquement dans le cadre de son usage prévu, notamment pour la gestion commerciale et administrative d'une activité professionnelle (devis, facturation, gestion clients et produits).
+
+Toute utilisation abusive, modification non autorisée ou redistribution du logiciel sans l'autorisation de l'éditeur est interdite.
+
+---
+
+### 3. Propriété intellectuelle
+
+Le logiciel SVFac, son nom, son interface, son code source, son design et ses éléments graphiques sont la propriété exclusive de **Studio Velysion CreatorHub**.
+
+Toute reproduction, distribution, modification ou revente du logiciel sans autorisation écrite préalable est strictement interdite.
+
+---
+
+### 4. Responsabilité
+
+L'éditeur ne pourra être tenu responsable de toute perte de données, dommage matériel ou perte financière résultant de l'utilisation du logiciel.
+
+L'utilisateur est responsable de la sauvegarde de ses données et de l'utilisation qu'il fait du logiciel.
+
+---
+
+### 5. Avertissement de sécurité Windows
+
+Lors de l'installation, Windows peut afficher un avertissement de sécurité indiquant que l'application n'est pas signée numériquement.
+
+Cela peut se produire car le logiciel ne possède pas encore de certificat de signature numérique.
+
+Dans ce cas, l'utilisateur peut cliquer sur :
+
+**« Informations complémentaires » puis « Exécuter quand même »**
+
+afin de poursuivre l'installation.
+
+L'éditeur officiel du logiciel est **Studio Velysion CreatorHub**.
+
+---
+
+### 6. Acceptation de la licence
+
+L'installation et l'utilisation du logiciel SVFac impliquent l'acceptation complète des présentes conditions de licence.
+
+---
+
+**Studio Velysion CreatorHub**
+Développement et édition du logiciel **SVFac – Studio Velysion Facture**
